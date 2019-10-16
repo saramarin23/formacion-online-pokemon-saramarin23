@@ -1,7 +1,11 @@
 import React from "react";
 
 const Filter = () => {
-  return <input></input>;
+  return (
+    <div>
+      <input placeholder="Busca tu pokemon aquí"></input>
+    </div>
+  );
 };
 
 export default Filter;

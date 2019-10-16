@@ -1,6 +1,7 @@
 import React from "react";
 import "../stylesheets/App.css";
 import Filter from "./Filter.js";
+import List from "./PokemonList.js";
 
 import data from "../services/data";
 
@@ -30,6 +31,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Filter />
+        <List />
       </div>
     );
   }
