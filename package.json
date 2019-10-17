@@ -2,6 +2,7 @@
   "name": "pokemon1",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "dependencies": {
     "gulp": "^4.0.2",
     "react": "^16.10.2",

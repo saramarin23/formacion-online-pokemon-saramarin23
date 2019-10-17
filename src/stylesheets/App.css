@@ -34,6 +34,10 @@
   box-shadow: 3px solid silver;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 .card-fcontainer {
   width: 100%;
   background-color: #dfdfdf;
@@ -42,6 +46,10 @@
 
 .card-image {
   width: 150px;
+}
+
+.card-image:hover {
+  transform: scale(1.3);
 }
 
 .id-container {
