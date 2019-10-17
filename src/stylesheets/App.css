@@ -11,7 +11,8 @@
   height: 40px;
   width: 50%;
   margin: 20px auto;
-  background-color: #dfdfdf;
+  background-color: #fffcec;
+  border: none;
 }
 
 .cards-list {

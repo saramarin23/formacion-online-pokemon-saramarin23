@@ -2,20 +2,23 @@ import React from "react";
 import Card from "./PokemonCard";
 
 const List = props => {
-  const { pokemones } = props;
-  // console.log(pokemones);
+  const { pokemones, query } = props;
   return (
     <ul className="cards-list">
-      {pokemones.map(pokemon => {
-        return (
-          <Card
-            name={pokemon.name}
-            image={pokemon.image}
-            typeList={pokemon.typeLists}
-            id={pokemon.id}
-          />
-        );
-      })}
+      {pokemones
+        .filter(pokemonFiltered =>
+          pokemonFiltered.name.toLowerCase().includes(query.toLowerCase())
+        )
+        .map(pokemon => {
+          return (
+            <Card
+              name={pokemon.name}
+              image={pokemon.image}
+              typeList={pokemon.typeLists}
+              id={pokemon.id}
+            />
+          );
+        })}
     </ul>
   );
 };

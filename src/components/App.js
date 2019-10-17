@@ -9,8 +9,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pokemones: []
+      pokemones: [],
+      query: ""
     };
+    this.queryPokemon = this.queryPokemon.bind(this);
   }
 
   componentDidMount() {
@@ -20,11 +22,9 @@ class App extends React.Component {
   getPokemonData() {
     data().then(data => {
       for (let item of data.results) {
-        // console.log(item);
         fetch(item.url)
           .then(response => response.json())
           .then(pokemon => {
-            // console.log(pokemon);
             const typesArray = [];
             for (let type of pokemon.types) {
               typesArray.push(type.type.name);
@@ -43,13 +43,20 @@ class App extends React.Component {
     });
   }
 
+  queryPokemon(e) {
+    const query = e.currentTarget.value;
+    console.log(query);
+    this.setState({ query: query });
+  }
+
   render() {
-    const { pokemones } = this.state;
+    const { pokemones, query } = this.state;
+
     // console.log(pokemones);
     return (
       <div className="App">
-        <Filter />
-        <List pokemones={pokemones} />
+        <Filter query={query} queryPokemon={this.queryPokemon} />
+        <List pokemones={pokemones} query={query} />
       </div>
     );
   }
