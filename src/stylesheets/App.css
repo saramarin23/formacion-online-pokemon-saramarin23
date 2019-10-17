@@ -1,4 +1,54 @@
 * {
-  /* background-image: url("../images/bgPokemon.jpg"); */
-  background-color: #f25c5c;
+  /* margin: 0; */
+}
+
+.App {
+  background-image: url("../images/bgPokemon.jpg");
+}
+
+.search-input {
+  display: flex;
+  height: 40px;
+  width: 50%;
+  margin: 20px auto;
+  background-color: #dfdfdf;
+}
+
+.cards-list {
+  margin: 20px 50px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.card {
+  margin: 10px 20px;
+  border: 1px solid #cfc699;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px solid silver;
+}
+
+.card-fcontainer {
+  background-color: #dfdfdf;
+  align-self: center;
+}
+
+.card-image {
+  width: 150px;
+}
+
+.card-image_container {
+  z-index: 3;
+}
+
+.id-container {
+  background-color: #d2ceca;
+  width: 55px;
+  text-align: center;
+}
+
+.card-details {
+  height: 80px;
+  background: white;
 }

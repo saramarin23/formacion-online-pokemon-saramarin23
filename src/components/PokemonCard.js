@@ -1,13 +1,17 @@
 import React from "react";
 
 const Card = props => {
-  console.log(props.image);
+  // console.log(props);
   return (
-    <li key={props.name}>
-      <div>
+    <li className="card" key={props.id}>
+      <div className="card-fcontainer">
+        <div className="card-image_container">
+          <img className="card-image" alt={props.name} src={props.image} />
+        </div>
+        <p className="id-container">ID / {props.id}</p>
+      </div>
+      <div className="card-details">
         <h2>{props.name}</h2>
-        <img alt={props.name} src={props.image} />
-        {/* {console.log(props.url)} */}
       </div>
     </li>
   );

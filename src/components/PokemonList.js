@@ -5,13 +5,14 @@ const List = props => {
   const { pokemones } = props;
   // console.log(pokemones);
   return (
-    <ul>
+    <ul className="cards-list">
       {pokemones.map(pokemon => {
         return (
           <Card
             name={pokemon.name}
             image={pokemon.image}
             typeList={pokemon.typeLists}
+            id={pokemon.id}
           />
         );
       })}

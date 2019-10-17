@@ -20,11 +20,11 @@ class App extends React.Component {
   getPokemonData() {
     data().then(data => {
       for (let item of data.results) {
-        console.log(item);
+        // console.log(item);
         fetch(item.url)
           .then(response => response.json())
           .then(pokemon => {
-            console.log(pokemon);
+            // console.log(pokemon);
             const typesArray = [];
             for (let type of pokemon.types) {
               typesArray.push(type.type.name);
@@ -32,6 +32,7 @@ class App extends React.Component {
             const bichejos = {
               name: pokemon.name,
               image: pokemon.sprites.front_default,
+              id: pokemon.id,
               typeList: typesArray
             };
             this.setState({
