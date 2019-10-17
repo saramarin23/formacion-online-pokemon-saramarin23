@@ -45,14 +45,11 @@ class App extends React.Component {
 
   queryPokemon(e) {
     const query = e.currentTarget.value;
-    console.log(query);
     this.setState({ query: query });
   }
 
   render() {
     const { pokemones, query } = this.state;
-
-    // console.log(pokemones);
     return (
       <div className="App">
         <Filter query={query} queryPokemon={this.queryPokemon} />

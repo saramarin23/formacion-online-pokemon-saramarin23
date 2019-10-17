@@ -1,5 +1,5 @@
 * {
-  /* margin: 0; */
+  text-align: center;
 }
 
 .App {
@@ -10,27 +10,32 @@
   display: flex;
   height: 40px;
   width: 50%;
-  margin: 20px auto;
+  margin: 20px auto 40px;
   background-color: #fffcec;
-  border: none;
+  border: 1px solid #dfdfdf;
+  border-radius: 4px;
+  font-size: 20px;
 }
 
 .cards-list {
   margin: 20px 50px;
   list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  display: flex;
+  flex-basis: 30%;
+  flex-wrap: wrap;
 }
 
 .card {
   margin: 10px 20px;
-  border: 1px solid #cfc699;
+  width: 200px;
+  border: 1px solid #dfdfdf;
   display: flex;
   flex-direction: column;
   box-shadow: 3px solid silver;
 }
 
 .card-fcontainer {
+  width: 100%;
   background-color: #dfdfdf;
   align-self: center;
 }
@@ -39,17 +44,33 @@
   width: 150px;
 }
 
-.card-image_container {
-  z-index: 3;
-}
-
 .id-container {
+  margin: 0;
   background-color: #d2ceca;
   width: 55px;
-  text-align: center;
 }
 
 .card-details {
-  height: 80px;
+  height: 90px;
   background: white;
+}
+
+h2 {
+  margin-top: 5px;
+  text-transform: capitalize;
+}
+
+.types-list {
+  margin: 0;
+  padding: 0;
+}
+
+.types-list_item {
+  list-style: none;
+  display: inline-block;
+  margin-left: 5px;
+  border: 1px solid silver;
+  padding: 3px;
+  border-radius: 5px;
+  text-transform: uppercase;
 }

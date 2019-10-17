@@ -14,7 +14,7 @@ const List = props => {
             <Card
               name={pokemon.name}
               image={pokemon.image}
-              typeList={pokemon.typeLists}
+              typeList={pokemon.typeList}
               id={pokemon.id}
             />
           );

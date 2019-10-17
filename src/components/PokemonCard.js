@@ -1,7 +1,14 @@
 import React from "react";
 
+const renderTypes = pokemon => {
+  return pokemon.map((type, index) => (
+    <li className="types-list_item" key={index}>
+      {type}
+    </li>
+  ));
+};
+
 const Card = props => {
-  // console.log(props);
   return (
     <li className="card" key={props.id}>
       <div className="card-fcontainer">
@@ -12,6 +19,7 @@ const Card = props => {
       </div>
       <div className="card-details">
         <h2>{props.name}</h2>
+        <ul className="types-list">{renderTypes(props.typeList)}</ul>
       </div>
     </li>
   );
