@@ -9,29 +9,46 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      pokemones: []
     };
-    this.getUserData = this.getUserData.bind(this);
   }
 
   componentDidMount() {
-    this.getUserData();
+    this.getPokemonData();
   }
 
-  getUserData() {
+  getPokemonData() {
     data().then(data => {
-      this.setState({
-        data: data.results
-      });
+      for (let item of data.results) {
+        console.log(item);
+        fetch(item.url)
+          .then(response => response.json())
+          .then(pokemon => {
+            console.log(pokemon);
+            const typesArray = [];
+            for (let type of pokemon.types) {
+              typesArray.push(type.type.name);
+            }
+            const bichejos = {
+              name: pokemon.name,
+              image: pokemon.sprites.front_default,
+              typeList: typesArray
+            };
+            this.setState({
+              pokemones: [...this.state.pokemones, bichejos]
+            });
+          });
+      }
     });
   }
 
   render() {
-    console.log(this.state.data);
+    const { pokemones } = this.state;
+    // console.log(pokemones);
     return (
       <div className="App">
         <Filter />
-        <List />
+        <List pokemones={pokemones} />
       </div>
     );
   }

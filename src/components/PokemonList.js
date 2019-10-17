@@ -1,10 +1,20 @@
 import React from "react";
 import Card from "./PokemonCard";
 
-const List = () => {
+const List = props => {
+  const { pokemones } = props;
+  // console.log(pokemones);
   return (
     <ul>
-      <Card />
+      {pokemones.map(pokemon => {
+        return (
+          <Card
+            name={pokemon.name}
+            image={pokemon.image}
+            typeList={pokemon.typeLists}
+          />
+        );
+      })}
     </ul>
   );
 };
