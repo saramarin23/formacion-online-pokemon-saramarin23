@@ -1,9 +1,10 @@
 * {
   text-align: center;
+  margin: 0;
 }
 
 .App {
-  background-image: url("../images/bgPokemon.jpg");
+  background: #eeeeee;
 }
 
 .search-input {

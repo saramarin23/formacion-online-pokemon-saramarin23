@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./PokemonCard";
+import { Link } from "react-router-dom";
 
 const List = props => {
   const { pokemones, query } = props;
@@ -9,14 +10,20 @@ const List = props => {
         .filter(pokemonFiltered =>
           pokemonFiltered.name.toLowerCase().includes(query.toLowerCase())
         )
-        .map(pokemon => {
+        .map((pokemon, index) => {
           return (
-            <Card
-              name={pokemon.name}
-              image={pokemon.image}
-              typeList={pokemon.typeList}
-              id={pokemon.id}
-            />
+            <Link
+              key={index}
+              to={`/pokemon-detail/${pokemon.id}`}
+              className="character__link"
+            >
+              <Card
+                name={pokemon.name}
+                image={pokemon.image}
+                typeList={pokemon.typeList}
+                id={pokemon.id}
+              />
+            </Link>
           );
         })}
     </ul>
